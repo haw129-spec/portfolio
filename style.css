@@ -1,0 +1,130 @@
+:root {
+  --color-accent: oklch(65% 50% 0);
+}
+
+body {
+  /* Set line height to 1.5 times the font size
+	   and use the OS’s UI font as the website font
+	 */
+  max-width: 100ch;
+  margin-inline:  auto;
+  padding: 1rem;
+
+  accent-color: var(--color-accent);
+  font: 100%/1.5 system-ui;
+}
+
+nav{
+    display: flex;
+    margin-bottom: auto;
+  }
+nav a{
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    color:inherit;
+    padding: 0.5em;
+    }
+
+
+
+nav a.current {
+  border-bottom: 3px solid var(--color-accent);
+}
+
+nav a:hover {
+  border-bottom: 3px solid var(--color-accent);
+} 
+
+form {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+}
+
+form label {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+}
+
+form button {
+    grid-column: 1 / -1;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+    gap: 1em;
+}
+
+.projects article {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+}
+
+
+.projects h2 {
+    margin: 0;
+}
+
+h1 {
+    font-size: 400%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1.1;
+    text-wrap: balance;
+}
+
+
+.resume,
+.resume-page {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.resume section,
+.resume-page section {
+    border: 1px solid color-mix(in oklch, var(--color-accent), canvas 75%);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background: color-mix(in oklch, canvas, var(--color-accent) 6%);
+}
+
+.resume h2,
+.resume-page h2 {
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.resume ul,
+.resume-page ul {
+    padding-left: 1.25rem;
+}
+
+.resume li,
+.resume-page li {
+    margin-block: 0.35rem;
+}
+
+.resume p,
+.resume-page p {
+    margin: 0.35rem 0;
+}
+
