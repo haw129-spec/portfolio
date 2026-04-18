@@ -128,3 +128,34 @@ h6 {
     margin: 0.35rem 0;
 }
 
+.current {
+  font-weight: bold;
+  color: red; 
+}
+
+html{
+    color-scheme:  dark
+}
+
+/* Add adaptive border color for nav (works in light & dark) */
+nav {
+  --border-color: oklch(50% 10% 200 / 40%);
+}
+
+/* Use the variable for nav link underline */
+nav a.current {
+  border-bottom: 3px solid var(--border-color);
+}
+
+nav a:hover {
+  border-bottom: 3px solid var(--border-color);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+}
+
+
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+}
