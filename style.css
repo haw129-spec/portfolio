@@ -177,3 +177,71 @@ nav a:hover {
   grid-row: 2;
   margin: 0;
 }
+
+.project-year {
+  color: gray;
+  font-style: italic;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+}
+
+
+#projects-plot{
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+
+  &:has(path:hover) {
+    path:not(:hover) {
+      opacity: 0.5;
+    }
+  }
+
+  path {
+    transition: 300ms;
+    cursor: pointer;
+  }
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  padding: 1em;
+  margin: 2em 0;
+  list-style: none;
+  border: 1px solid color-mix(in oklch, var(--color-accent), canvas 75%);
+  border-radius: 0.5em;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.swatch {
+  display: inline-block;
+  width: 1em;
+  aspect-ratio: 1 / 1;
+  background-color: var(--color);
+  border-radius: 0.2em;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+
+.legend {
+  flex: 1;
+}
+
+.selected {
+  --color: oklch(60% 45% 0) !important;
+
+  &:is(path) {
+    fill: var(--color);
+  }
+}
