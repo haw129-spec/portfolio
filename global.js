@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pages = [
     { url: "", title: "Home" },
     { url: "projects/", title: "Projects" },
+    { url: "meta/", title: "Meta" },
     { url: "contacts/", title: "Contact" },
     { url: "resume/", title: "Resume" },
     { url: "https://github.com/haw129-spec/portfolio", title: "Github" }
