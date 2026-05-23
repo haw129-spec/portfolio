@@ -21,11 +21,28 @@
             </p>
         </section>
     </div>
+    <div style="display: flex; align-items: baseline;">
+        <label style="display: flex; flex: 1; align-items: baseline; gap: 0.5rem;">
+            Show commits until:
+            <input
+                type="range"
+                id="commit-progress"
+                min="0"
+                max="100"
+                value="100"
+            />
+            <time id="commit-time" style="margin-left: auto;"></time>
+        </label>
+    </div>
     <div id="stats"></div>
-    <h2>Commits by time of day</h2>
-    <div id="chart"></div>
+    <div id="scrolly-1">
+      <div id="scatter-story">some filler text here</div>
 
-    <dl id="commit-tooltip" class="info tooltip" hidden>
+      <div id="scatter-plot">
+        <h2>Commits by time of day</h2>
+        <div id="chart"></div>
+
+        <dl id="commit-tooltip" class="info tooltip" hidden>
       <dt>Commit</dt>
       <dd>
         <a href="" id="commit-link" target="_blank"></a>
@@ -35,7 +52,7 @@
       <dd id="commit-date"></dd>
 
       <dt>Time</dt>
-      <dd id="commit-time"></dd>
+      <dd id="commit-tooltip-time"></dd>
 
       <dt>Author</dt>
       <dd id="commit-author"></dd>
@@ -45,6 +62,8 @@
     </dl>
     <p id="selection-count">No commits selected</p>
     <dl id="language-breakdown" class="stats"></dl>
+      </div>
+    </div>
 
     <section>
         <h2>Future Visualizations</h2>
@@ -55,5 +74,17 @@
         </ul>
     </section>
 
+</section>
+
+<dl id="files">
+  <!-- we want the following structure for each file:
+  <div>
+    <dt>
+      <code>{file.name}</code>
+    </dt>
+    <dd>{file.lines.length} lines</dd>
+  </div>
+  -->
+</dl>
 </body>
 </html>
